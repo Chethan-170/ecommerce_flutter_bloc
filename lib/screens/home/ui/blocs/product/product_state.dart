@@ -19,13 +19,27 @@ class LoadingProductState extends ProductState {
 class ProductListProductState extends ProductState {
   final List<ProductModel> productList;
 
-  ProductListProductState(this.productList);
+  ProductListProductState({required this.productList});
+
+  ProductListProductState copyWith({List<ProductModel> list = const []}) {
+    return ProductListProductState(productList: list);
+  }
 
   @override
   List<Object?> get props => [productList];
 }
 
-class ErrorProductState extends ProductState {
+class ErrorOnLoadingProductState extends ProductState {
+  @override
+  List<Object?> get props => [];
+}
+
+class AddedToWishlistSuccessProductState extends ProductActionState {
+  @override
+  List<Object?> get props => [];
+}
+
+class RemovedFromWishlistSuccessProductState extends ProductActionState {
   @override
   List<Object?> get props => [];
 }

@@ -12,6 +12,8 @@ class ProductModel {
   String description;
   String category;
   String image;
+  bool inWishlist = false;
+  bool inBasket = false;
   Rating rating;
 
   ProductModel({
@@ -22,6 +24,8 @@ class ProductModel {
     required this.category,
     required this.image,
     required this.rating,
+    this.inWishlist = false,
+    this.inBasket = false,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
